@@ -66,7 +66,7 @@ def get_basic_info(show_progress=True):
     i = 0
     total = len(ts_symbols)
     for index, row in ts_symbols.iterrows():
-        i = i +1
+        i += 1
         if i > 10:
             break
 

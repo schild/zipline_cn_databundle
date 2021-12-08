@@ -65,7 +65,7 @@ def check_code(code):
                     return True
 
     except Exception as e:
-        print(str(e))
+        print(e)
         return False
 
     print('x')

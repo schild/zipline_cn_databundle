@@ -174,7 +174,6 @@ def get_hist_data(symbol_df, symbol_map, tdx_reader, start_session, end_session,
         ).fillna(0.0)
 
         yield sid, history.sort_index()
-    pass
 
 if __name__ == '__main__':
 
@@ -191,14 +190,11 @@ if __name__ == '__main__':
     i = 0
     total = len(ts_symbols)
     for index, row in ts_symbols.iterrows():
-        i = i +1
+        i += 1
         if i > 10:
             break
 
-        srow = {}
-        srow['t'] = 1
-        srow['symbol'] = index
-        srow['asset_name'] = row['name']
+        srow = {'t': 1, 'symbol': index, 'asset_name': row['name']}
         symbols.append(srow)
 
     df_symbols = pd.DataFrame(data=symbols).sort_values('symbol')
