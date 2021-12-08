@@ -48,17 +48,15 @@ class TdxReader:
         t_date = str(row[0])
         datestr = t_date[:4] + "-" + t_date[4:6] + "-" + t_date[6:]
 
-        new_row = (
+        return (
             datestr,
-            row[1] * 0.01, # * 0.01 * 1000 , zipline need 1000 times to original price
+            row[1] * 0.01,
             row[2] * 0.01,
             row[3] * 0.01,
             row[4] * 0.01,
             row[5],
-            row[6]
+            row[6],
         )
-
-        return new_row
 
 
 if __name__ == '__main__':
